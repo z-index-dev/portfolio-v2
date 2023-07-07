@@ -58,7 +58,13 @@ export default function Home() {
           </Stack>
         </Stack>
       </Container>
-      <Box width="100%" position="relative" bgcolor="background.paper" py={4}>
+      <Box
+        width="100%"
+        position="relative"
+        bgcolor="background.paper"
+        pt={4}
+        pb={8}
+      >
         <Container maxWidth="lg">
           <Stack spacing={2}>
             <Typography variant="h2" component="h3" fontWeight={600}>
@@ -87,7 +93,9 @@ export default function Home() {
               hit me up on one the platforms below, and please check out my new
               blog!
             </Typography>
-            <SocialMediaIcons />
+            <Box>
+              <SocialMediaIcons />
+            </Box>
           </Stack>
         </Container>
       </Box>

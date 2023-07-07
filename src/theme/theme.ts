@@ -107,6 +107,25 @@ export const createPortfolioTheme = ({
       },
     },
     components: {
+      MuiButtonBase: {
+        styleOverrides: {
+          root: {
+            "&.MuiListItemButton-root.Mui-selected": {
+              backgroundColor: "transparent",
+              "&:hover": {
+                backgroundColor: "transparent",
+              },
+            },
+            "&.MuiListItemButton-root": {
+              backgroundColor: "transparent",
+              "&:hover": {
+                backgroundColor: "transparent",
+                color: secondary,
+              },
+            },
+          },
+        },
+      },
       MuiCssBaseline: {
         styleOverrides: {
           "*": {
@@ -130,6 +149,26 @@ export const createPortfolioTheme = ({
             ".MuiPaper-root.MuiDrawer-paper": {
               background: backgroundPaper,
               backgroundImage: "none !important",
+            },
+          },
+        },
+      },
+      MuiList: {
+        styleOverrides: {
+          root: {
+            ".MuiButtonBase-root.MuiListItemButton-root > a": {
+              color: textPrimary,
+              textDecoration: "none",
+            },
+            ".MuiButtonBase-root.MuiListItemButton-root": {
+              "&:hover > a": {
+                color: secondary,
+              },
+            },
+            ".MuiButtonBase-root.MuiListItemButton-root.Mui-selected > a": {
+              color: secondary,
+              backgroundColor: "none",
+              textDecoration: "underline",
             },
           },
         },

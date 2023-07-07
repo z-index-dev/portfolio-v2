@@ -25,14 +25,14 @@ export const NavigationBar: FC<NavigationBarProps> = ({}) => {
         height="fit-content"
         sx={{ background: (theme) => theme.palette.background.paper }}
       >
-        <Grid lg={4} alignItems="center" justifyContent="center">
+        <Grid item lg={4} alignItems="center" justifyContent="center">
           <Box px={4}>
             <Button onClick={sidebarMenuOpen.setTrue}>
               <MenuIcon fontSize="large" style={{ color: "white" }} />
             </Button>
           </Box>
         </Grid>
-        <Grid lg={4} alignItems="center" justifyContent="center">
+        <Grid item lg={4} alignItems="center" justifyContent="center">
           <Box
             justifySelf="center"
             display="flex"

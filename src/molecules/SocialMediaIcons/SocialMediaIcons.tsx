@@ -2,7 +2,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import type { FC } from "react";
-import { Link, Stack } from "src/atoms";
+import { IconButton, Link, Stack } from "src/atoms";
 
 const SocialMediaIcons: FC = () => {
   return (
@@ -13,7 +13,9 @@ const SocialMediaIcons: FC = () => {
         title="Github"
         mr={2}
       >
-        <GitHubIcon fontSize="large" style={{ color: "white" }} />
+        <IconButton>
+          <GitHubIcon fontSize="large" style={{ color: "white" }} />
+        </IconButton>
       </Link>
       <Link
         href="https://twitter.com/iamzachstweets"
@@ -21,7 +23,9 @@ const SocialMediaIcons: FC = () => {
         title="Github"
         mr={2}
       >
-        <TwitterIcon fontSize="large" style={{ color: "white" }} />
+        <IconButton>
+          <TwitterIcon fontSize="large" style={{ color: "white" }} />
+        </IconButton>
       </Link>
       <Link
         href="https://www.linkedin.com/in/zach-shelton-b1770b56/"
@@ -29,7 +33,9 @@ const SocialMediaIcons: FC = () => {
         title="Github"
         mr={2}
       >
-        <LinkedInIcon fontSize="large" style={{ color: "white" }} />
+        <IconButton>
+          <LinkedInIcon fontSize="large" style={{ color: "white" }} />
+        </IconButton>
       </Link>
     </Stack>
   );
