@@ -107,6 +107,15 @@ export const createPortfolioTheme = ({
       },
     },
     components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            fontWeight: 500,
+            fontFamily: inter.style.fontFamily,
+            color: textPrimary,
+          },
+        },
+      },
       MuiButtonBase: {
         styleOverrides: {
           root: {
@@ -140,6 +149,19 @@ export const createPortfolioTheme = ({
             fontSize: "1rem",
             lineHeight: "1.5rem",
             letterSpacing: "inherit !important",
+          },
+        },
+      },
+      MuiDivider: {
+        styleOverrides: {
+          root: {
+            borderColor: secondary,
+            "&:before": {
+              borderColor: secondary,
+            },
+            "&:after": {
+              borderColor: secondary,
+            },
           },
         },
       },

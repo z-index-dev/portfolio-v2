@@ -1,4 +1,4 @@
-import { Container, Link, Stack, Typography } from "@core/atoms";
+import { Container, Divider, Link, Stack, Typography } from "@core/atoms";
 import ProjectCard from "@core/organisms/ProjectCard/ProjectCard";
 import { Layout } from "pages/layout";
 import type { FC } from "react";
@@ -9,7 +9,7 @@ export const projectsObject = [
     title: "Portfolio with Blog",
     description:
       "I've been wanting to add a blog to my portfolio for quite some time now, and decided to use the opportunity to convert this site to something more in line with my current stack. I'm using Next.js with TypeScript as the base framework, Material UI for the component library and Vercel for hosting. For the blog, I'm publishing to a basic Wordpress setup and using GraphQL with Apollo to pull in the posts. I'll probably shift the architecture to a Turborepo setup in the future, but for now, this works great.",
-    image: "",
+    image: "/portfolio-v1.png",
     links: {
       demo: "",
       github: "",
@@ -20,10 +20,9 @@ export const projectsObject = [
     title: "Portfolio V1",
     description:
       "My original portfolio site with Vanilla JavaScript and SCSS for styling. I used a lot of the same designs you see here, but ran this out with a theme switcher for some added fun. I still like how this turned out, but wanted to have a larger codebase to maintain and experiment with outside of work.",
-    image: "",
+    image: "/portfolio-v1.png",
     links: {
-      demo: "",
-      github: "",
+      github: "https://github.com/z-index-dev/portfolio",
     },
   },
   {
@@ -31,10 +30,10 @@ export const projectsObject = [
     title: "Rockets Rewards",
     description:
       'Season Ticket Member Rewards redemption page built using HTML table, SCSS and Vanilla JS. Pulls account info via query string from REST API, which is fed from MongoDB through Node.js server hosted on Heroku. User then makes selections and submits to database pending server-side validation. Server also includes export function for viewing submissions and a "wake up" function so the server never lags.',
-    image: "",
+    image: "/rewards-portfolio.jpg",
     links: {
-      demo: "",
-      github: "",
+      github: "https://github.com/z-index-dev/rockets-rewards",
+      server: "https://github.com/z-index-dev/rockets-rewards-server",
     },
   },
   {
@@ -42,10 +41,10 @@ export const projectsObject = [
     title: "Pomodoro App",
     description:
       "Pomodoro timer with to-do list built with HTML, CSS and Vanilla JS, most notably using the setInterval and clearInterval methods, and localStorage to keep track of user preferences. If you like it, feel free to use it to keep you focused at work!",
-    image: "",
+    image: "/pomodoro-portfolio.png",
     links: {
-      demo: "",
-      github: "",
+      demo: "https://z-index-pomodoro.netlify.app/",
+      github: "https://github.com/z-index-dev/pomodoro-app",
     },
   },
   {
@@ -53,10 +52,10 @@ export const projectsObject = [
     title: "Custom Video Player",
     description:
       "HTML, CSS and Vanilla JS video player with scrubbing, time updates, time tooltips on hover and fullscreen capability. I initially built this as part of Wes Bos' JavaSript30 course then added the time tracker and tooltips with a timeString regex.",
-    image: "",
+    image: "/video-player-portfolio.png",
     links: {
-      demo: "",
-      github: "",
+      demo: "https://z-index-video-player.netlify.app/",
+      github: "https://github.com/z-index-dev/custom-video-player",
     },
   },
 ];
@@ -87,16 +86,19 @@ const Projects: FC = () => {
             .
           </Typography>
         </Stack>
-        <Stack>
-          {projectsObject.map((project) => {
+        <Stack spacing={8} mt={8} mb={8}>
+          {projectsObject.map((project, index) => {
             return (
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                links={project.links}
-              />
+              <>
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  image={project.image}
+                  links={project.links}
+                />
+                {index + 1 !== projectsObject.length && <Divider />}
+              </>
             );
           })}
         </Stack>
