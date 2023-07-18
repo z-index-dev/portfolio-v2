@@ -1,5 +1,5 @@
 import { Container, Divider, Link, Stack, Typography } from "@core/atoms";
-import ProjectCard from "@core/organisms/ProjectCard/ProjectCard";
+import { ProjectCard } from "@core/organisms";
 import { Layout } from "pages/layout";
 import type { FC } from "react";
 

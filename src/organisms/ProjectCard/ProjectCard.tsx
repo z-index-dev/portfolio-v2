@@ -2,7 +2,7 @@ import { Box, Button, Stack, Typography } from "@core/atoms";
 import type { FC } from "react";
 import Image from "next/image";
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
@@ -13,7 +13,7 @@ interface ProjectCardProps {
   };
 }
 
-const ProjectCard: FC<ProjectCardProps> = ({
+export const ProjectCard: FC<ProjectCardProps> = ({
   title,
   description,
   image,
