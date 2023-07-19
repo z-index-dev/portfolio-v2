@@ -1,5 +1,4 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
@@ -23,7 +22,10 @@ export const NavigationBar: FC<NavigationBarProps> = ({}) => {
         alignItems="center"
         minWidth="100%"
         height="fit-content"
-        sx={{ background: (theme) => theme.palette.background.paper }}
+        sx={{
+          background: (theme) => theme.palette.background.paper,
+          zIndex: 100,
+        }}
       >
         <Grid item lg={4} alignItems="center" justifyContent="center">
           <Box px={4}>

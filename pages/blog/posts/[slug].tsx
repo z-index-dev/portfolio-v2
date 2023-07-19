@@ -1,6 +1,7 @@
-import { Box, Container, Divider, Stack, Typography } from "@core/atoms";
+import { Box, Chip, Container, Divider, Stack, Typography } from "@core/atoms";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticProps } from "next";
+import Image from "next/image";
 import { Layout } from "pages/layout";
 import { useMemo } from "react";
 import { PostProps } from "..";
@@ -11,9 +12,23 @@ const Post = ({ code, frontmatter }: PostProps) => {
 
   return (
     <Layout>
-      <Container maxWidth="xl">
-        <Typography variant="h1">{frontmatter.title}</Typography>
-        {/* Tags go here */}
+      <Container maxWidth="md" sx={{ minHeight: "100vh" }}>
+        <Box position="relative" overflow="hidden" width="100%" height="540px">
+          <Image
+            src={frontmatter.image}
+            fill={true}
+            style={{ objectFit: "cover" }}
+            alt={frontmatter.title}
+          />
+        </Box>
+        <Typography variant="h1" mt={1}>
+          {frontmatter.title}
+        </Typography>
+        <Stack direction="row" spacing={1}>
+          {frontmatter.tags.map((tag) => (
+            <Chip label={tag} color="primary" />
+          ))}
+        </Stack>
         <Stack spacing={0.25} mt={2} mb={2}>
           <Typography variant="body1">{frontmatter.description}</Typography>
           <Typography variant="body2">{frontmatter.date}</Typography>

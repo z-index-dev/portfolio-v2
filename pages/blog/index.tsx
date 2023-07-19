@@ -1,4 +1,5 @@
-import { Container, Divider, Link, Stack, Typography } from "@core/atoms";
+import { Container, Stack, Typography } from "@core/atoms";
+import { PostsCard } from "@core/organisms/PostsCard";
 import { GetStaticProps } from "next";
 import { Layout } from "pages/layout";
 import type { FC } from "react";
@@ -12,13 +13,16 @@ export type PostProps = {
     date: string;
     description: string;
     tags: string[];
+    image: string;
   };
 };
 
 const Blog: FC<{ posts: PostProps[] }> = ({ posts }) => {
+  const publishedPosts = posts.filter((post) => post.frontmatter.date);
+
   return (
     <Layout>
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ minHeight: "100vh" }}>
         <Stack spacing={2}>
           <Typography variant="h1">Blog</Typography>
           <Typography variant="body1">
@@ -35,12 +39,37 @@ const Blog: FC<{ posts: PostProps[] }> = ({ posts }) => {
             where you are as a software developer.
           </Typography>
         </Stack>
+        <Stack mt={4} spacing={4} maxWidth="lg" mx="auto">
+          {publishedPosts.map(
+            (post) =>
+              post.frontmatter.date && (
+                <PostsCard
+                  title={post.frontmatter.title}
+                  date={post.frontmatter.date}
+                  description={post.frontmatter.description}
+                  image={post.frontmatter.image}
+                  tags={post.frontmatter.tags}
+                  slug={post.slug}
+                />
+              )
+          )}
+        </Stack>
+        {publishedPosts.length < 4 && (
+          <Stack mt={4} spacing={1}>
+            <Typography variant="h1" component="p" align="center">
+              🤷‍♂️
+            </Typography>
+            <Typography variant="body1" align="center">
+              ...that's all for now!
+            </Typography>
+          </Stack>
+        )}
       </Container>
     </Layout>
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+export const getStaticProps: GetStaticProps = async () => {
   const posts = getAllPosts();
   return {
     props: { posts },

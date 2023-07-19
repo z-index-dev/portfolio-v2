@@ -135,6 +135,24 @@ export const createPortfolioTheme = ({
           },
         },
       },
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            "& > a": {
+              textDecoration: "none",
+              color: textPrimary,
+            },
+          },
+        },
+      },
+      MuiChip: {
+        styleOverrides: {
+          root: {
+            fontWeight: 400,
+            fontFamily: inter.style.fontFamily,
+          },
+        },
+      },
       MuiCssBaseline: {
         styleOverrides: {
           "*": {
