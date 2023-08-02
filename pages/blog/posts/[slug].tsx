@@ -1,4 +1,6 @@
 import { Box, Chip, Container, Divider, Stack, Typography } from "@core/atoms";
+import { BlogImage, Caption } from "@core/molecules";
+import { styled } from "@mui/material";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticProps } from "next";
 import Image from "next/image";
@@ -6,6 +8,42 @@ import { Layout } from "pages/layout";
 import { useMemo } from "react";
 import { PostProps } from "..";
 import { getAllPosts, getPost } from "../../../utils";
+
+const PostContainer = styled(Box)(({ theme }) => ({
+  overflow: "hidden",
+  h2: {
+    color: theme.palette.primary.main,
+  },
+  p: {
+    fontSize: "1.2rem",
+    lineHeight: "1.8rem",
+    strong: {
+      color: theme.palette.secondary.main,
+    },
+  },
+  blockquote: {
+    backgroundColor: theme.palette.background.paper,
+    borderLeft: `4px solid ${theme.palette.primary.main}`,
+    paddingLeft: 16,
+    p: {
+      padding: "1rem 0",
+    },
+  },
+  ul: {
+    padding: ".5rem 2.5rem .75rem",
+    borderRadius: "1rem",
+    backgroundColor: theme.palette.background.paper,
+  },
+  li: {
+    fontSize: "1.2rem",
+    lineHeight: "2rem",
+  },
+  code: {
+    backgroundColor: theme.palette.background.paper,
+    color: theme.palette.primary.main,
+    padding: "0 .25rem",
+  },
+}));
 
 const Post = ({ code, frontmatter }: PostProps) => {
   const PostComponent = useMemo(() => getMDXComponent(code), [code]);
@@ -26,7 +64,7 @@ const Post = ({ code, frontmatter }: PostProps) => {
         </Typography>
         <Stack direction="row" spacing={1}>
           {frontmatter.tags.map((tag) => (
-            <Chip label={tag} color="primary" />
+            <Chip label={tag} color="primary" key={tag} />
           ))}
         </Stack>
         <Stack spacing={0.25} mt={2} mb={2}>
@@ -34,9 +72,9 @@ const Post = ({ code, frontmatter }: PostProps) => {
           <Typography variant="body2">{frontmatter.date}</Typography>
         </Stack>
         <Divider />
-        <Box mt={4}>
-          <PostComponent />
-        </Box>
+        <PostContainer>
+          <PostComponent components={{ BlogImage, Caption }} />
+        </PostContainer>
       </Container>
     </Layout>
   );

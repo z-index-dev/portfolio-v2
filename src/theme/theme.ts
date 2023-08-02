@@ -105,6 +105,10 @@ export const createPortfolioTheme = ({
         fontWeight: 300,
         fontFamily: roboto_slab.style.fontFamily,
       },
+      caption: {
+        fontSize: ".75rem",
+        lineHeight: "1.5rem",
+      },
     },
     components: {
       MuiButton: {

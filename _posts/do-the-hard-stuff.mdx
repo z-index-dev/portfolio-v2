@@ -6,8 +6,95 @@ image: "/do-the-hard-stuff.jpg"
 tags: ["career", "imposter syndrome", "personal development", "architecture"]
 ---
 
-I don't like the below. Come back with a fresh mind.
+Once you land your first software development job, your focus has to shift from getting a seat at the table to actually advancing your career.
 
-No matter how you got here, you've worked hard to land your job as a software developer. The first major goal in your tech career, whether through college or a boot camp or maybe just a grueling technical interview, has been achieved.
+Making this internal adjustment can be difficult, and is made more so by the imposter syndrome many developers feel when they first get their big break in the industry. But fear not - there is a way to kill two birds with one stone here that will set you up for long-term success.
 
-Now your focus has to shift from starting your career to building it.
+Career advancement in software development looks something like the following:
+
+> technical acumen + strength of work + communication = growth
+
+Depending on your path, the weights of these three inputs will vary. **Principal engineers** can lean pretty heavily on technical acumen and strength of work while keeping their interactions outside their immediate team more task-focused. Aspiring **Lead Engineers** will need to develop rapport with a wide range of outside stakeholders, such as product owners, members of the marketing team and other lead engineers.
+
+Good communication within a tech organization deserves its own post, and maybe even several, and is highly dependent on outside factors. For now, let's focus on how you improve the two inputs to growth that you can control - technical acumen and strength of work.
+
+Proving yourself in these two areas requires an advanced understanding of the technologies you work with on daily basis (technical acumen) and shipped code that applies it (strength of work). These will mostly go hand-in-hand, but the reality is that most of your day-to-day work will be working within the existing structure of the codebase. Feature work and firedrill bug fixing will be a good reflection of your skills and are major components of success, but are ultimately expected outputs of your job function.
+
+To break beyond your established skillset and function, you have to reach for problems whose solutions exceed creating new functions and components.
+
+You have to do the hard stuff. And in doing so, you will conquer imposter syndrome and find that your job title/salary is catching up with your skillset.
+
+## Cool Story. What's the Hard Stuff?
+
+Broadly, the type of work we're targeting here are the projects and tasks that are intimidating at first blush. Examples look like:
+
+- Major new features
+- Updating core dependencies, such as Next.js, TypeScript, React or Apollo GraphQL
+- Rewriting your CI/CD flow
+- Upgrading your build tools, such as Webpack, Turbopack or ESBuild
+- Integrating a monorepo tool like Turborepo or Nx
+- Revamping the design system
+
+With the exception of major feature work, these types of projects all deal heavily with software architecture, which is the structure of the system you and your team work within.
+
+Working with this part of your codebase can be an absolute bear. You'll be shocked at how quickly your code editor starts overflowing with red highlights when you bump a package version. God forbid you upgrade Next.js, then turn around and immediately run `next build` for kicks. If your terminal had hands, it would reach out and strangle you for making it be so verbose.
+
+This is where working in architecture gets uncomfortable.
+
+Your system's balance is a lot more fragile than you think. And adding shiny new inputs to it can cause vast amounts of new, unexpected outputs that don't play nice with what you're currently leaning on. The new version of Next can't run on your current Node version, which means your type generation script for API calls is deprecated and that's a major problem because most feature work requires new queries and mutations.\*
+
+<Caption alignment="left">
+  *You guessed it. This exact situation happened to me right before writing this
+  post.
+</Caption>
+
+<BlogImage src="/leak-water-leak.gif" alt="Finger in the dam" width={300} />
+
+Before you know it, your task to bump a package version has turned into a month-long quest to fix things that weren't broken when you started. It's counterintuitive, frustrating and will probably make you feel like you're in way over your head.
+
+## Why Would You Ever Want to Do This?
+
+In the intro, I promised this type of work would help you conquer that lingering specter that tries to tell you don't belong in software development, otherwise known as imposter syndrome.
+
+Feeling like you're in over your head is more or less the exact thing that imposter syndrome makes you fear. You've found the task that will out you to the rest of your team and company that you're a total hack, and it's back to the drawing board of life.
+
+My unwavering, unequivocal advice is to run toward that.
+
+Because no matter how many errors you hit or how much the scope widens itself, there is a finish line. You'll pore through documentation, Google, Chat GPT, Stack Overflow and Github Issues until your terminal is happy, and you'll have a final PR that looks something like this:
+
+<BlogImage
+  src="/hard-stuff-pr-image.png"
+  alt="Large pull request"
+  width={800}
+  height={35}
+/>
+
+Pretty terrifying. But the only way you reach this point is through a multi-week journey where you've touched every corner of your codebase. Whatever mystery existed in your system has either dwindled considerably or vanished entirely. You're a bonafide authority on how the odds and ends of your repo glue together.
+
+From this point on, that lingering specter should feel more like a fly on your windshield. More importantly, you'll find yourself regarded as high-performing member of your team.
+
+## Advice for Tackling These Large-Scale Projects
+
+Starting a project that you know will take you multiple weeks is always the hardest part. Especially when starting means breaking a bunch of code that was working just fine before you got your grubby hands on it.
+
+First, **it helps to have a plan**. Do yourself and your teammates a favor, and think about how you break this gargantuan PR into a handful of smaller ones that you can merge iteratively and/or to a feature branch. This is more straightforward when you're working on a feature that has obvious, logical benchmarks. For architecture updates, this probably looks more like breaking it down to more general goals, such as putting your code up for review when a part of the app is working again or your build script stops throwing such-and-such error.
+
+However you do it, breaking big problems into smaller ones will help you see progress, and that's what motivates you to keep going.
+
+Second, **dig deep, but think broadly**. When it comes to architecture, it's unlikely that there's a repo with the exact same structure and dependencies as your own. There are too many variables at play, and that's just not how software development works. The more your codebase grows, so does the likelihood that its problems are unique to it.
+
+This isn't to say that you won't find help from other developers. You just can't copy-and-pasting your error message into Google or ChatGPT and expect the right solution to be the first result. You'll have to consider what you've changed and how it's influencing the error you're seeing, then deduce where the conflict is happening. From there, you can more effectively use search tools, Github Issues and documentation to narrow down how to fix the problem.
+
+And lastly, **don't be afraid to ask for help**. Often when we've hit a road block in these scenarios, the scope of the problem is far beyond changing a few lines of code. Even if you've found the cause and solution to the problem, you may realize that you've opened a bigger can of worms. At this point, or if you're just flat-ass stuck, the best person to talk to is your lead or a senior that's been through these situations.
+
+A fresh set of eyes and some outside perspective can provide shocking clarity. Plus these are the type of people who just enjoy nerding out about this type of work.
+
+## Wrapping Up
+
+Raising our hands for the hardest project can feel contrary to our internal programming. The easy, or at least more familiar, way out feels safer and less stressful.
+
+Whenever I get a choice between tasks, I still feel the pull toward the one I know will be the most straightforward. I think about the extra time I'll be able to spend learning new tech, working on side projects or just having shorter days where I don't write as much code.
+
+But, I know I'll be happier with the results if I take the path of most resistance. It's been my personal mission statement since I took a job with a more traditional software company, and I've never been happier with my career path. Not only do I feel like I'm growing quickly, but imposter syndrome barely ever enters my headspace.
+
+So the next time you have an opportunity to take on a project you think might be a little beyond your skillset, jump on it. Both you and your teammates will come away impressed by what you can accomplish.
