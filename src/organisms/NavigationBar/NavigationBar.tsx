@@ -1,48 +1,47 @@
 import MenuIcon from "@mui/icons-material/Menu";
+import { Theme, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import { useBooleanState } from "react-use-object-state";
-import { Box, Button, Grid } from "../../atoms";
+import { Box, Button, Stack } from "../../atoms";
 import { SidebarMenu } from "../SidebarMenu";
 
 interface NavigationBarProps {}
 
 export const NavigationBar: FC<NavigationBarProps> = ({}) => {
   const sidebarMenuOpen = useBooleanState(false);
+  const isMobile = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("md")
+  );
 
   return (
     <>
-      <Grid
-        container
+      <Stack
         position="fixed"
         top={0}
         left={0}
         direction="row"
         alignItems="center"
         minWidth="100%"
-        height="fit-content"
+        height={60}
         sx={{
           background: (theme) => theme.palette.background.paper,
           zIndex: 100,
         }}
       >
-        <Grid item lg={4} alignItems="center" justifyContent="center">
-          <Box px={4}>
-            <Button onClick={sidebarMenuOpen.setTrue}>
-              <MenuIcon fontSize="large" style={{ color: "white" }} />
-            </Button>
-          </Box>
-        </Grid>
-        <Grid item lg={4} alignItems="center" justifyContent="center">
-          <Box
-            justifySelf="center"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            py={2}
-            mb={-0.5}
-          >
+        <Box px={isMobile ? 2 : 4} position="absolute" zIndex={20}>
+          <Button onClick={sidebarMenuOpen.setTrue}>
+            <MenuIcon fontSize="large" style={{ color: "white" }} />
+          </Button>
+        </Box>
+        <Stack
+          alignItems="center"
+          justifyContent="center"
+          position="relative"
+          width="100%"
+        >
+          <Box mt={0.75}>
             <Link href="/">
               <Image
                 src="/z-index-logo-transparent.png"
@@ -52,8 +51,8 @@ export const NavigationBar: FC<NavigationBarProps> = ({}) => {
               />
             </Link>
           </Box>
-        </Grid>
-      </Grid>
+        </Stack>
+      </Stack>
       <SidebarMenu openState={sidebarMenuOpen} />
     </>
   );

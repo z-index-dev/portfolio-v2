@@ -9,6 +9,7 @@ import {
 import type { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Box, Theme, useMediaQuery } from "@mui/material";
 
 export interface PostsCardProps {
   title: string;
@@ -27,18 +28,40 @@ export const PostsCard: FC<PostsCardProps> = ({
   tags,
   slug,
 }) => {
+  const isMobile = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("lg")
+  );
+
   return (
-    <Card>
+    <Card sx={{ width: { sm: "100%", md: "50%", lg: "100%" }, mx: "auto" }}>
       <Link href={`/blog/posts/${slug}`}>
         <CardActionArea>
-          <Stack spacing={2} direction="row" alignItems="center">
-            <Image src={image} alt={title} width={480} height={300} />
+          <Stack
+            spacing={2}
+            direction={isMobile ? "column" : "row"}
+            alignItems="center"
+          >
+            <Image
+              src={image}
+              alt={title}
+              height={300}
+              width={480}
+              style={{ width: "100%", height: "auto" }}
+            />
             <CardContent>
-              <Stack direction="column" spacing={1}>
+              <Stack direction="column" spacing={1} px={isMobile ? 4 : 2}>
                 <Typography variant="h2">{title}</Typography>
-                <Stack direction="row" spacing={1}>
+                <Stack
+                  direction="row"
+                  spacing={1}
+                  flexWrap={isMobile ? "wrap" : "nowrap"}
+                >
                   {tags.map((tag) => (
-                    <Chip label={tag} color="primary" />
+                    <Chip
+                      label={tag}
+                      color="primary"
+                      sx={{ mt: ".5rem !important" }}
+                    />
                   ))}
                 </Stack>
                 <Typography variant="body1">{description}</Typography>

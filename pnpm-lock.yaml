@@ -6,16 +6,16 @@ settings:
 
 dependencies:
   '@emotion/cache':
-    specifier: ^11.10.5
+    specifier: ^11.11.0
     version: 11.11.0
   '@emotion/react':
-    specifier: ^11.10.5
+    specifier: ^11.10.6
     version: 11.10.6(@types/react@18.0.28)(react@18.2.0)
   '@emotion/server':
-    specifier: ^11.10.0
+    specifier: ^11.11.0
     version: 11.11.0
   '@emotion/styled':
-    specifier: ^11.10.5
+    specifier: ^11.10.6
     version: 11.10.6(@emotion/react@11.10.6)(@types/react@18.0.28)(react@18.2.0)
   '@mui/icons-material':
     specifier: ^5.11.9
@@ -1388,8 +1388,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /caniuse-lite@1.0.30001457:
-    resolution: {integrity: sha512-SDIV6bgE1aVbK6XyxdURbUE89zY7+k1BBBaOwYwkNCglXlel/E7mELiHC64HQ+W0xSKlqWhV9Wh7iHxUjMs4fA==}
+  /caniuse-lite@1.0.30001521:
+    resolution: {integrity: sha512-fnx1grfpEOvDGH+V17eccmNjucGUnCbP6KL+l5KqBIerp26WK/+RQ7CIDE37KGJjaPyqWXXlFUyKiWmvdNNKmQ==}
     dev: false
 
   /ccount@2.0.1:
@@ -3322,7 +3322,7 @@ packages:
     dependencies:
       '@next/env': 13.2.1
       '@swc/helpers': 0.4.14
-      caniuse-lite: 1.0.30001457
+      caniuse-lite: 1.0.30001521
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)

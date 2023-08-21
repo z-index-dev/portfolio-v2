@@ -2,14 +2,19 @@ import Image from "next/image";
 import { Box, Container, Stack, Typography } from "../src/atoms";
 import { Layout } from "./layout";
 import SocialMediaIcons from "../src/molecules/SocialMediaIcons/SocialMediaIcons";
+import { Theme, useMediaQuery } from "@mui/material";
 
 export default function Home() {
+  const isMobile = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("md")
+  );
+
   return (
     <Layout>
       <Container maxWidth="lg">
         <Stack
           maxWidth="100%"
-          direction="row"
+          direction={isMobile ? "column" : "row"}
           spacing={8}
           pt={10}
           pb={20}

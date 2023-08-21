@@ -22,7 +22,7 @@ const Blog: FC<{ posts: PostProps[] }> = ({ posts }) => {
 
   return (
     <Layout>
-      <Container maxWidth="xl" sx={{ minHeight: "100vh" }}>
+      <Container maxWidth="lg" sx={{ minHeight: "100vh" }}>
         <Stack spacing={2}>
           <Typography variant="h1">Blog</Typography>
           <Typography variant="body1">
@@ -36,7 +36,7 @@ const Blog: FC<{ posts: PostProps[] }> = ({ posts }) => {
             here is to provide some insight into career growth and how to
             improve as a developer. This is an overlooked part of the wide world
             of tech blogging, and I hope you find something that connects with
-            where you are as a software developer.
+            where you are as a software engineer.
           </Typography>
         </Stack>
         <Stack mt={4} spacing={4} maxWidth="lg" mx="auto">
