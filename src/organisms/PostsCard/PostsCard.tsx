@@ -51,16 +51,12 @@ export const PostsCard: FC<PostsCardProps> = ({
             <CardContent>
               <Stack direction="column" spacing={1} px={isMobile ? 4 : 2}>
                 <Typography variant="h2">{title}</Typography>
-                <Stack
-                  direction="row"
-                  spacing={1}
-                  flexWrap={isMobile ? "wrap" : "nowrap"}
-                >
+                <Stack direction="row" flexWrap={isMobile ? "wrap" : "nowrap"}>
                   {tags.map((tag) => (
                     <Chip
                       label={tag}
                       color="primary"
-                      sx={{ mt: ".5rem !important" }}
+                      sx={{ mt: ".5rem !important", mr: ".5rem !important" }}
                     />
                   ))}
                 </Stack>

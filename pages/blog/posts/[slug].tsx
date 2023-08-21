@@ -13,6 +13,7 @@ const PostContainer = styled(Box)(({ theme }) => ({
   overflow: "hidden",
   h2: {
     color: theme.palette.primary.main,
+    marginTop: "2.5rem",
   },
   p: {
     fontSize: "1.2rem",
@@ -50,11 +51,11 @@ const Post = ({ code, frontmatter }: PostProps) => {
 
   return (
     <Layout>
-      <Container maxWidth="md" sx={{ minHeight: "100vh" }}>
+      <Container maxWidth="md" sx={{ minHeight: "100vh", mb: 4 }}>
         <Box position="relative" overflow="hidden" width="100%" height="540px">
           <Image
             src={frontmatter.image}
-            fill={true}
+            fill
             style={{ objectFit: "cover" }}
             alt={frontmatter.title}
           />
@@ -62,9 +63,14 @@ const Post = ({ code, frontmatter }: PostProps) => {
         <Typography variant="h1" mt={1}>
           {frontmatter.title}
         </Typography>
-        <Stack direction="row" spacing={1}>
+        <Stack direction="row" flexWrap="wrap">
           {frontmatter.tags.map((tag) => (
-            <Chip label={tag} color="primary" key={tag} />
+            <Chip
+              label={tag}
+              color="primary"
+              key={tag}
+              sx={{ mt: ".5rem !important", mr: ".5rem !important" }}
+            />
           ))}
         </Stack>
         <Stack spacing={0.25} mt={2} mb={2}>

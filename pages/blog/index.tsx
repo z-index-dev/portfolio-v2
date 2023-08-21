@@ -55,7 +55,7 @@ const Blog: FC<{ posts: PostProps[] }> = ({ posts }) => {
           )}
         </Stack>
         {publishedPosts.length < 4 && (
-          <Stack mt={4} spacing={1}>
+          <Stack my={4} spacing={1}>
             <Typography variant="h1" component="p" align="center">
               🤷‍♂️
             </Typography>
