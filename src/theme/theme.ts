@@ -1,6 +1,7 @@
 import { createTheme, darken, lighten } from "@mui/material/styles";
 import { darkColorPalette } from "./palette";
 import { Inter, Roboto_Slab } from "next/font/google";
+import { text } from "stream/consumers";
 
 export const inter = Inter({
   weight: ["300", "400", "600"],
@@ -197,6 +198,13 @@ export const createPortfolioTheme = ({
           },
         },
       },
+      MuiInputLabel: {
+        styleOverrides: {
+          root: {
+            color: textPrimary,
+          },
+        },
+      },
       MuiList: {
         styleOverrides: {
           root: {
@@ -213,6 +221,34 @@ export const createPortfolioTheme = ({
               color: secondary,
               backgroundColor: "none",
               textDecoration: "underline",
+            },
+          },
+        },
+      },
+      MuiTextField: {
+        defaultProps: {
+          variant: "outlined",
+        },
+        styleOverrides: {
+          root: {
+            ".MuiInputLabel-root": {
+              color: textPrimary,
+            },
+            ".MuiFormHelperText-root": { color: "white" },
+            ".MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: secondary,
+                borderRadius: "12px",
+                border: "1",
+                borderWidth: "2px",
+              },
+              "&.Mui-focused fieldset": {
+                color: primary,
+                borderColor: primary,
+              },
+            },
+            "& label.Mui-focused": {
+              color: primary,
             },
           },
         },

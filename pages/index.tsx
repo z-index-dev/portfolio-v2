@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Box, Container, Stack, Typography } from "../src/atoms";
 import { Layout } from "./layout";
-import SocialMediaIcons from "../src/molecules/SocialMediaIcons/SocialMediaIcons";
+import { SocialMediaIcons } from "../src/molecules";
 import { Theme, useMediaQuery } from "@mui/material";
 
 export default function Home() {

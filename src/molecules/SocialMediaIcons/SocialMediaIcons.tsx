@@ -4,7 +4,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import type { FC } from "react";
 import { IconButton, Link, Stack } from "src/atoms";
 
-const SocialMediaIcons: FC = () => {
+export const SocialMediaIcons: FC = () => {
   return (
     <Stack direction="row" alignItems="start" mt={2}>
       <Link
@@ -40,4 +40,3 @@ const SocialMediaIcons: FC = () => {
     </Stack>
   );
 };
-export default SocialMediaIcons;

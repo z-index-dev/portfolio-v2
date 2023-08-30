@@ -63,7 +63,7 @@ export const projectsObject = [
 const Projects: FC = () => {
   return (
     <Layout>
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Stack spacing={2}>
           <Typography variant="h1">Projects</Typography>
           <Typography variant="body1">

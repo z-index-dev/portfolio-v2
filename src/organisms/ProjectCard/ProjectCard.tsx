@@ -1,6 +1,7 @@
 import { Box, Button, Stack, Typography } from "@core/atoms";
 import type { FC } from "react";
 import Image from "next/image";
+import { Theme, useMediaQuery } from "@core/theme";
 
 export interface ProjectCardProps {
   title: string;
@@ -19,9 +20,13 @@ export const ProjectCard: FC<ProjectCardProps> = ({
   image,
   links,
 }) => {
+  const isMobile = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("md")
+  );
+
   return (
     <Stack
-      direction="row"
+      direction={isMobile ? "column" : "row"}
       spacing={4}
       alignItems="center"
       justifyContent="center"
@@ -33,7 +38,7 @@ export const ProjectCard: FC<ProjectCardProps> = ({
         <Typography variant="h2" color="primary">
           {title}
         </Typography>
-        <Typography variant="body1" pl={0.25}>
+        <Typography variant="body2" pl={0.25}>
           {description}
         </Typography>
         {links && (
