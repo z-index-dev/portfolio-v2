@@ -11,6 +11,7 @@ import {
   getSessionStorageItem,
   setSessionStorageItem,
 } from "@core/storageUtils";
+import { Theme, useMediaQuery } from "@core/theme";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Layout } from "pages/layout";
 import { BaseSyntheticEvent, FC, ReactNode, useEffect } from "react";
@@ -56,6 +57,9 @@ const Contact: FC = () => {
   });
   const accessKey = process.env.NEXT_PUBLIC_WEB_FORM_ACCESS_KEY;
   const hasSubmittedContactForm = useBooleanState(false);
+  const isMobile = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  );
 
   useEffect(() => {
     if (getSessionStorageItem(HAS_SUBMITTED_CONTACT_FORM)) {
@@ -105,7 +109,10 @@ const Contact: FC = () => {
           "Form has been submitted"
         ) : (
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Stack direction="column" maxWidth="md" spacing={4}>
+            <Box mt={2}>
+              <SocialMediaIcons />
+            </Box>
+            <Stack direction="column" maxWidth="md" spacing={4} mb={8}>
               <input
                 {...register("access_key")}
                 type="hidden"
@@ -131,8 +138,7 @@ const Contact: FC = () => {
                 multiline
                 rows={4}
               />
-              <SocialMediaIcons />
-              <Box>
+              <Box alignSelf={isMobile ? "center" : "left"}>
                 <Button variant="contained" size="large" type="submit">
                   Submit
                 </Button>

@@ -59,7 +59,9 @@ export default function Home() {
                 Houston, TX
               </Typography>
             </Typography>
-            <SocialMediaIcons />
+            <Box mt={2}>
+              <SocialMediaIcons />
+            </Box>
           </Stack>
         </Stack>
       </Container>

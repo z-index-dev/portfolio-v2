@@ -6,7 +6,7 @@ import { IconButton, Link, Stack } from "src/atoms";
 
 export const SocialMediaIcons: FC = () => {
   return (
-    <Stack direction="row" alignItems="start" mt={2}>
+    <Stack direction="row" alignItems="start">
       <Link
         href="https://github.com/z-index-dev"
         target="_blank"
