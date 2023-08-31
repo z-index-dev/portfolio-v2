@@ -7,10 +7,7 @@ import {
   Typography,
 } from "@core/atoms";
 import { SocialMediaIcons } from "@core/molecules";
-import {
-  getSessionStorageItem,
-  setSessionStorageItem,
-} from "@core/storageUtils";
+import { getLocalStorageItem, setLocalStorageItem } from "@core/storageUtils";
 import { Theme, useMediaQuery } from "@core/theme";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Layout } from "pages/layout";
@@ -62,7 +59,7 @@ const Contact: FC = () => {
   );
 
   useEffect(() => {
-    if (getSessionStorageItem(HAS_SUBMITTED_CONTACT_FORM)) {
+    if (getLocalStorageItem(HAS_SUBMITTED_CONTACT_FORM)) {
       hasSubmittedContactForm.setTrue();
     }
   }, [hasSubmittedContactForm.state]);
@@ -82,7 +79,7 @@ const Contact: FC = () => {
       .then(async (response) => {
         let json = await response.json();
         if (json.success) {
-          setSessionStorageItem(HAS_SUBMITTED_CONTACT_FORM, "true");
+          setLocalStorageItem(HAS_SUBMITTED_CONTACT_FORM, "true");
           hasSubmittedContactForm.setTrue();
           e?.target.reset();
           reset();
@@ -104,14 +101,22 @@ const Contact: FC = () => {
             the form below. I'm also reachable on Github, Twitter and LinkedIn
             should you prefer those platforms.
           </Typography>
+          <Box mt={2}>
+            <SocialMediaIcons />
+          </Box>
         </Stack>
         {hasSubmittedContactForm.state ? (
-          "Form has been submitted"
+          <Stack spacing={2}>
+            <Typography align="center" variant="h2" mt={4}>
+              Your form has been successfully submitted! 🎉
+            </Typography>
+            <Typography align="center" variant="body1">
+              I'll get back to you as quickly as I can and look forward to
+              chatting soon!
+            </Typography>
+          </Stack>
         ) : (
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Box mt={2}>
-              <SocialMediaIcons />
-            </Box>
             <Stack direction="column" maxWidth="md" spacing={4} mb={8}>
               <input
                 {...register("access_key")}
