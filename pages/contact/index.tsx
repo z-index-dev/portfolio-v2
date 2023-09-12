@@ -117,7 +117,7 @@ const Contact: FC = () => {
           </Stack>
         ) : (
           <form onSubmit={handleSubmit(onSubmit)}>
-            <Stack direction="column" maxWidth="md" spacing={4} mb={8}>
+            <Stack direction="column" maxWidth="md" spacing={2} mb={8}>
               <input
                 {...register("access_key")}
                 type="hidden"
@@ -127,19 +127,19 @@ const Contact: FC = () => {
                 {...register("name")}
                 label="Name*"
                 error={Boolean(errors.name)}
-                helperText={(errors.name?.message as ReactNode) || ""}
+                helperText={(errors.name?.message as ReactNode) || " "}
               />
               <TextField
                 {...register("email")}
                 label="Email*"
                 error={Boolean(errors.email)}
-                helperText={(errors.email?.message as ReactNode) || ""}
+                helperText={(errors.email?.message as ReactNode) || " "}
               />
               <TextField
                 {...register("messageField")}
                 label="Message*"
                 error={Boolean(errors.messageField)}
-                helperText={(errors.messageField?.message as ReactNode) || ""}
+                helperText={(errors.messageField?.message as ReactNode) || " "}
                 multiline
                 rows={4}
               />
