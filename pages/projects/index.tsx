@@ -1,6 +1,6 @@
 import { Container, Divider, Link, Stack, Typography } from "@core/atoms";
 import { ProjectCard } from "@core/organisms";
-import { Layout } from "pages/layout";
+import { Layout } from "@core/Layout";
 import type { FC } from "react";
 
 export const projectsObject = [

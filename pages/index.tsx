@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Box, Container, Stack, Typography } from "../src/atoms";
-import { Layout } from "./layout";
+import { Layout } from "@core/Layout";
 import { SocialMediaIcons } from "../src/molecules";
 import { Theme, useMediaQuery } from "@mui/material";
 

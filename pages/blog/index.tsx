@@ -1,7 +1,7 @@
 import { Container, Stack, Typography } from "@core/atoms";
 import { PostsCard } from "@core/organisms/PostsCard";
 import { GetStaticProps } from "next";
-import { Layout } from "pages/layout";
+import { Layout } from "@core/Layout";
 import type { FC } from "react";
 import { getAllPosts } from "utils";
 
@@ -50,6 +50,7 @@ const Blog: FC<{ posts: PostProps[] }> = ({ posts }) => {
                   image={post.frontmatter.image}
                   tags={post.frontmatter.tags}
                   slug={post.slug}
+                  key={post.slug}
                 />
               )
           )}

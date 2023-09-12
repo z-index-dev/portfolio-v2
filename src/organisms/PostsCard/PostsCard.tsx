@@ -54,6 +54,7 @@ export const PostsCard: FC<PostsCardProps> = ({
                 <Stack direction="row" flexWrap={isMobile ? "wrap" : "nowrap"}>
                   {tags.map((tag) => (
                     <Chip
+                      key={tag}
                       label={tag}
                       color="primary"
                       sx={{ mt: ".5rem !important", mr: ".5rem !important" }}

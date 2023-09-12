@@ -10,7 +10,7 @@ import { SocialMediaIcons } from "@core/molecules";
 import { getLocalStorageItem, setLocalStorageItem } from "@core/storageUtils";
 import { Theme, useMediaQuery } from "@core/theme";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Layout } from "pages/layout";
+import { Layout } from "@core/Layout";
 import { BaseSyntheticEvent, FC, ReactNode, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useBooleanState } from "react-use-object-state";
@@ -62,7 +62,7 @@ const Contact: FC = () => {
     if (getLocalStorageItem(HAS_SUBMITTED_CONTACT_FORM)) {
       hasSubmittedContactForm.setTrue();
     }
-  }, [hasSubmittedContactForm.state]);
+  }, [hasSubmittedContactForm]);
 
   const onSubmit = async (
     data: ContactFormValues,

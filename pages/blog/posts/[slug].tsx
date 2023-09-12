@@ -4,7 +4,7 @@ import { styled } from "@mui/material";
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticProps } from "next";
 import Image from "next/image";
-import { Layout } from "pages/layout";
+import { Layout } from "@core/Layout";
 import { useMemo } from "react";
 import { PostProps } from "..";
 import { getAllPosts, getPost } from "../../../utils";

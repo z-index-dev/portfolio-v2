@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { Box } from "../src/atoms";
-import { Footer, NavigationBar } from "../src/organisms";
+import { Box } from "../atoms";
+import { Footer, NavigationBar } from "../organisms";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
