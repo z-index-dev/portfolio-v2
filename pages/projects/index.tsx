@@ -8,11 +8,10 @@ export const projectsObject = [
     id: 0,
     title: "Portfolio with Blog",
     description:
-      "I've been wanting to add a blog to my portfolio for quite some time now, and decided to use the opportunity to convert this site to something more in line with my current stack. I'm using Next.js with TypeScript as the base framework, Material UI for the component library and Vercel for hosting. For the blog, I'm publishing to a basic Wordpress setup and using GraphQL with Apollo to pull in the posts. I'll probably shift the architecture to a Turborepo setup in the future, but for now, this works great.",
-    image: "/portfolio-v1.png",
+      "I've been wanting to add a blog to my portfolio for quite some time now, and decided to use the opportunity to convert this site to something more in line with my current stack. I'm using Next.js with TypeScript as the base framework, Material UI for the component library and Vercel for hosting. For the blog, I'm using MDX with the MDX Bundler package and pre-rendering the posts at build time. I'll probably shift the architecture to a Turborepo setup in the future, but for now, this works great.",
+    image: "/portfolio-blog.png",
     links: {
-      demo: "",
-      github: "",
+      github: "https://github.com/z-index-dev/portfolio-v2/settings",
     },
   },
   {
