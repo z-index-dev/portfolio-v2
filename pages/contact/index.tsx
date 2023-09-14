@@ -15,6 +15,7 @@ import { BaseSyntheticEvent, FC, ReactNode, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useBooleanState } from "react-use-object-state";
 import * as Yup from "yup";
+import { MetaGen } from "@core/seo";
 
 const HAS_SUBMITTED_CONTACT_FORM = "hasSubmittedContactForm";
 
@@ -92,6 +93,12 @@ const Contact: FC = () => {
 
   return (
     <Layout>
+      <MetaGen
+        title="Contact"
+        description="Contact me to talk about an upcoming project, need an extra hand on a current one or just want to talk shop."
+        image="/open-graph-image.jpg"
+        contentType="website"
+      />
       <Container maxWidth="lg" sx={{ minHeight: "100vh" }}>
         <Stack spacing={2}>
           <Typography variant="h1">Contact Me</Typography>

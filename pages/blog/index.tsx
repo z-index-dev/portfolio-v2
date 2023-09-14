@@ -4,6 +4,7 @@ import { GetStaticProps } from "next";
 import { Layout } from "@core/Layout";
 import type { FC } from "react";
 import { getAllPosts } from "utils";
+import { MetaGen } from "@core/seo";
 
 export type PostProps = {
   code: string;
@@ -22,6 +23,12 @@ const Blog: FC<{ posts: PostProps[] }> = ({ posts }) => {
 
   return (
     <Layout>
+      <MetaGen
+        title="Blog"
+        description="Learn how to grow and improve in your career as a software developer, and get to know me a little better along the way."
+        image="/open-graph-image.jpg"
+        contentType="website"
+      />
       <Container maxWidth="lg" sx={{ minHeight: "100vh" }}>
         <Stack spacing={2}>
           <Typography variant="h1">Blog</Typography>

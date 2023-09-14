@@ -3,6 +3,7 @@ import { Box, Container, Stack, Typography } from "../src/atoms";
 import { Layout } from "@core/Layout";
 import { SocialMediaIcons } from "../src/molecules";
 import { Theme, useMediaQuery } from "@mui/material";
+import { MetaGen } from "@core/seo";
 
 export default function Home() {
   const isMobile = useMediaQuery((theme: Theme) =>
@@ -11,6 +12,12 @@ export default function Home() {
 
   return (
     <Layout>
+      <MetaGen
+        title="Zach Shelton | Portfolio & Blog"
+        description="Welcome to my portfolio site and blog, where I share my thoughts on career advancement in software development and show off some of my work."
+        image="/open-graph-image.jpg"
+        contentType="website"
+      />
       <Container maxWidth="lg">
         <Stack
           maxWidth="100%"
@@ -59,9 +66,7 @@ export default function Home() {
                 Houston, TX
               </Typography>
             </Typography>
-            <Box mt={2}>
-              <SocialMediaIcons />
-            </Box>
+            <Box mt={2}>{false && <SocialMediaIcons />}</Box>
           </Stack>
         </Stack>
       </Container>

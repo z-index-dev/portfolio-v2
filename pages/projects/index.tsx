@@ -2,6 +2,7 @@ import { Container, Divider, Link, Stack, Typography } from "@core/atoms";
 import { ProjectCard } from "@core/organisms";
 import { Layout } from "@core/Layout";
 import type { FC } from "react";
+import { MetaGen } from "@core/seo";
 
 export const projectsObject = [
   {
@@ -62,6 +63,12 @@ export const projectsObject = [
 const Projects: FC = () => {
   return (
     <Layout>
+      <MetaGen
+        title="Projects"
+        description="A few of the projects I've built over the years, including my portfolio site and blog."
+        image="/open-graph-image.jpg"
+        contentType="website"
+      />
       <Container maxWidth="lg">
         <Stack spacing={2}>
           <Typography variant="h1">Projects</Typography>

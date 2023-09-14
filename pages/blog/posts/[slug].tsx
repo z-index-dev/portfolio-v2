@@ -8,6 +8,7 @@ import { Layout } from "@core/Layout";
 import { useMemo } from "react";
 import { PostProps } from "..";
 import { getAllPosts, getPost } from "../../../utils";
+import { MetaGen } from "@core/seo";
 
 const PostContainer = styled(Box)(({ theme }) => ({
   overflow: "hidden",
@@ -51,6 +52,12 @@ const Post = ({ code, frontmatter }: PostProps) => {
 
   return (
     <Layout>
+      <MetaGen
+        title={frontmatter.title}
+        description={frontmatter.description}
+        image={frontmatter.image}
+        contentType="website"
+      />
       <Container maxWidth="md" sx={{ minHeight: "100vh", mb: 4 }}>
         <Box position="relative" overflow="hidden" width="100%" height="540px">
           <Image
