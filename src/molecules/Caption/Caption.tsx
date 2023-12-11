@@ -2,7 +2,6 @@ import { Typography } from "@mui/material";
 import type { FC, ReactNode } from "react";
 
 interface CaptionProps {
-  text: ReactNode;
   alignment: "inherit" | "left" | "center" | "right" | "justify";
   children: ReactNode;
 }

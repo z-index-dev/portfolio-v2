@@ -67,6 +67,7 @@ const Post = ({ code, frontmatter }: PostProps) => {
             alt={frontmatter.title}
           />
         </Box>
+        <Caption alignment="left">{frontmatter.attribution || ""}</Caption>
         <Typography variant="h1" mt={1}>
           {frontmatter.title}
         </Typography>

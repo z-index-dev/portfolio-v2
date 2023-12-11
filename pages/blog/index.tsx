@@ -15,6 +15,7 @@ export type PostProps = {
     description: string;
     tags: string[];
     image: string;
+    attribution: string;
   };
 };
 
