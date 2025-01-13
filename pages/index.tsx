@@ -63,7 +63,7 @@ export default function Home() {
                 fontWeight={500}
                 color="secondary"
               >
-                Houston, TX
+                Raleigh, NC
               </Typography>
             </Typography>
             <Box mt={2}>
@@ -90,11 +90,11 @@ export default function Home() {
               applications.
             </Typography>
             <Typography variant="body1">
-              Currently, I'm a Senior Frontend Engineer for Octopus Energy 🐙, a
-              clean energy tech company that just came to United States from the
-              United Kingdom. I started with the company in February 2022 after
-              spending two years as the Digital Development Manager at the
-              Houston Rockets 🚀🏀.
+              Currently, I'm the Lead Frontend Engineer for Octopus Energy US
+              🐙, a clean energy tech company that just came to United States
+              from the United Kingdom. I started with the company in February
+              2022 after spending two years as the Digital Development Manager
+              at the Houston Rockets 🚀🏀.
             </Typography>
             <Typography variant="body1">
               My current stack is pretty React-focused now that I'm working on a
