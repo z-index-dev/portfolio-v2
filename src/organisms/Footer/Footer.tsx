@@ -7,7 +7,7 @@ export const Footer: FC = () => {
   return (
     <Box width="100%" bgcolor="background.paper" p={1}>
       <Typography variant="body2" textAlign="center">
-        Copyright &copy; Z-Index Web Servies, LLC {year}
+        Copyright &copy; Z-Index Web Services, LLC {year}
       </Typography>
     </Box>
   );
